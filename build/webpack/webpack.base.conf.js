@@ -3,6 +3,7 @@ var webpack = require('webpack')
 var vueLoader = require('../vue-loader.conf')()
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
+var postcss = require('../../config/postcss.conf')
 
 module.exports = {
   // 入口配置
@@ -61,7 +62,7 @@ module.exports = {
       options: {
         context: __dirname,
         // 非vue文件中的纯样式部分的postcss配置
-        // postcss,
+        postcss,
         eslint: {
           // 友好的格式输出eslint错误信息
           formatter: require('eslint-friendly-formatter'),
