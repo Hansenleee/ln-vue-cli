@@ -1,22 +1,25 @@
 {
-  "name": "vue-scroll-list",
+  "name": "ln-vue-cli",
   "version": "1.0.0",
-  "description": "基于better-scroll的vue列表组件",
+  "description": "vue脚手架",
   "main": "index.js",
   "scripts": {
     "dev": "node server/index.js",
+    "build": "node build/build.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
     "axios": "^0.15.3",
     "case-sensitive-paths-webpack-plugin": "^2.1.1",
-    "eslint-config-airbnb-base": "^12.1.0",
+    "chalk": "^1.1.3",
     "eslint-plugin-filenames": "^1.2.0",
     "eslint-plugin-import": "^2.8.0",
     "koa": "^2.4.1",
     "koa-convert": "^1.2.0",
     "koa-webpack-dev-middleware": "^2.0.2",
     "koa-webpack-hot-middleware": "^1.0.3",
+    "ora": "^1.3.0",
+    "rimraf": "^2.6.2",
     "vue": "^2.2.1",
     "vue-resource": "^1.2.1",
     "vue-router": "^2.2.0",
@@ -96,7 +99,7 @@
   "author": "libin",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/Hansenleee/vue-scroll-list/issues"
+    "url": "https://github.com/Hansenleee/ln-vue-cli/issues"
   },
-  "homepage": "https://github.com/Hansenleee/vue-scroll-list#readme"
+  "homepage": "https://github.com/Hansenleee/ln-vue-cli#readme"
 }

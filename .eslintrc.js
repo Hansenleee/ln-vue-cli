@@ -12,6 +12,7 @@ module.exports = {
   env: {
     browser: true,
     node: true,
+    es6: true,
   },
   extends: 'standard',
   plugins: [
@@ -68,7 +69,7 @@ module.exports = {
     'import/prefer-default-export': [0],
     'import/no-dynamic-require': [0],
     'import/imports-first': [0],
-    // 明明import后面有空行还是一直提示缺少,后期再研究下
+    // 明明import后面有空行还是一直提示缺少mmp,后期再研究下
     // 'import/newline-after-import': [1],
     'import/extensions': [0],
   }
