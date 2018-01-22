@@ -30,11 +30,10 @@ module.exports = merge(baseConfig, {
       }
     }),
     new OptimizeCSSPlugin({
-      // cssProcessorOptions: {
-      //   safe: true,
-      //   // postcss那边已经处理过autoprefixer了，这里把它关掉，否则会导致浏览器前缀兼容范围问题
-      //   autoprefixer: false,
-      // },
+      cssProcessorOptions: {
+        safe: true,
+        autoprefixer: false,
+      },
     }),
     // 抽离公共模块
     new webpack.optimize.CommonsChunkPlugin({

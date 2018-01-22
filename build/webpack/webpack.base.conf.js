@@ -31,7 +31,12 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        use: [vueLoader, 'eslint-loader'],
+        use: [vueLoader, {
+          loader: 'eslint-loader',
+          options: {
+            formatter: require('eslint-friendly-formatter')
+          }
+        }],
       },
       {
         test: /\.jsx?$/,
@@ -58,17 +63,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new webpack.LoaderOptionsPlugin({
-      options: {
-        context: __dirname,
-        // 非vue文件中的纯样式部分的postcss配置
-        postcss,
-        eslint: {
-          // 友好的格式输出eslint错误信息
-          formatter: require('eslint-friendly-formatter'),
-        },
-      },
-    }),
     // 不区分大小写
     new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({
