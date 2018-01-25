@@ -27,8 +27,11 @@ module.exports = merge(baseWebpackConfig, {
     new webpack.DefinePlugin({
       'process.env': '"development"'
     }),
+    // 热更新
     new webpack.HotModuleReplacementPlugin(),
+    // 打包遇到错误不退出
     new webpack.NoEmitOnErrorsPlugin(),
+    // webpack的友好错误提示
     new FriendlyErrorsPlugin(),
   ]
 })

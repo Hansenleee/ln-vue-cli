@@ -63,6 +63,14 @@ module.exports = {
     ]
   },
   plugins: [
+    // options共享
+    new webpack.LoaderOptionsPlugin({
+      options: {
+        context: __dirname,
+        // 非vue文件中的纯样式部分的postcss配置
+        postcss,
+      },
+    }),
     // 不区分大小写
     new CaseSensitivePathsPlugin(),
     new HtmlWebpackPlugin({
