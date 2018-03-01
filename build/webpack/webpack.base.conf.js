@@ -17,6 +17,8 @@ module.exports = {
     filename: '[name].js',
     // 异步模块文件名
     chunkFilename: '[id].js',
+    // 公共路径
+    publicPath: '/',
   },
   // 配置解析
   resolve: {
