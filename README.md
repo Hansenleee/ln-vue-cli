@@ -1,12 +1,12 @@
 # ln-vue-cli
 自己摸索构建的vue架手架，技术栈(环境搭建为主，不含业务模块)为
 
-*vue
-*webpack(包括各种plugin和基于webpack的插件)
-*koa
-*eslint
-*babel
-*koa2-connect-history-api-fallback(解决history下的路由)
+* vue
+* webpack(包括各种plugin和基于webpack的插件)
+* koa
+* eslint
+* babel
+* koa2-connect-history-api-fallback(解决history下的路由)
 
 # 目录结构说明
 
