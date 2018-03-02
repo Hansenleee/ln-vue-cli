@@ -14,7 +14,7 @@ if (config.enablePx2Rem) {
   postcss.unshift(pxtorem(Object.assign({
     rootValue: 100,
     minPixelValue: 0,
-    propList: [],
+    propList: ['*'],
   }, config.enablePx2Rem)))
 }
 module.exports = postcss

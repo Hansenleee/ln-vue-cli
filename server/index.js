@@ -18,9 +18,7 @@ var koaWebpackHotMiddleware = convert(webpackHotMiddleware(compiler))
 var app = new Koa()
 
 // 解决history路由模式
-app.use(require('koa2-connect-history-api-fallback')({
-  verbose: true,
-}))
+app.use(require('koa2-connect-history-api-fallback')())
 
 app.use(koaWebpackDevMiddleware)
 app.use(koaWebpackHotMiddleware)
