@@ -24,6 +24,7 @@ module.exports = {
     'valid-jsdoc': [jsDocLevel, {
       // 允许返回标签缺少类型
       requireReturnType: false,
+      requireReturn: false,
     }],
     'require-jsdoc': [jsDocLevel, {
       require: {
@@ -72,5 +73,7 @@ module.exports = {
     // 明明import后面有空行还是一直提示缺少mmp,后期再研究下
     // 'import/newline-after-import': [1],
     'import/extensions': [0],
+    'space-before-function-paren': [0],
+    'max-len': [1, {code: 100}]
   }
 }

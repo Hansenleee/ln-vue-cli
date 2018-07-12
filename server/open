@@ -1,0 +1,59 @@
+(*
+ 打开谷歌浏览器
+ 如果目标地址已经打开了，则那个标签页刷新
+ 如果没有则新开一个标签页
+*)
+
+on run argv
+    --获取目标地址
+    set targetUrl to item 1 of argv
+    --变量
+    set hasTab to false
+    set targetTab to null
+    set targetWindow to null
+    
+    -- 目标浏览器是谷歌浏览器
+    tell application "Google Chrome"
+      
+      --遍历每个窗口
+      repeat with theWindow in every window
+        
+        --遍历每个窗口下的tab页
+        repeat with theTab in every tab of theWindow
+          
+          set theUrl to theTab's URL as string
+          
+          -- 如果已经有打开的页面，标记
+          if theUrl starts with targetUrl then
+            
+            set hasTab to true
+            set targetTab to theTab
+            set targetWindow to theWindow
+            
+          end if
+          
+        end repeat
+        
+      end repeat
+      
+      --判断是否已经有打开的页面
+      if hasTab = true then
+        
+        --重新加载tab页
+        tell targetTab to reload
+        tell targetWindow to activate
+        
+      else
+        
+        --如果没有则重新打开一个页面
+        tell window 0
+          
+          make new tab with properties {URL:targetUrl}
+          
+        end tell
+        
+      end if
+      
+    end tell
+
+end run

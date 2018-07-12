@@ -18,7 +18,13 @@ module.exports = merge(baseConfig, {
         use: ['css-loader', 'postcss-loader'],
         fallback: 'vue-style-loader',
       }),
-    },]
+    },{
+      test: /\.styl$/,
+      use: ExtractTextPlugin.extract({
+        use: ['css-loader', 'postcss-loader', 'stylus-loader?resolve url'],
+        fallback: 'vue-style-loader',
+      }),
+    }]
   },
   plugins: [
     new webpack.DefinePlugin({
@@ -29,6 +35,8 @@ module.exports = merge(baseConfig, {
         warnings: false
       }
     }),
+    // extract css into its own file
+    new ExtractTextPlugin('[name].[contenthash:8].css'),
     new OptimizeCSSPlugin({
       cssProcessorOptions: {
         safe: true,

@@ -27,6 +27,8 @@ module.exports = {
     // 别名配置
     alias: {
       'vue': 'vue/dist/vue.esm.js',
+      'src': path.join(process.cwd(), 'src'),
+      'assets': path.join(process.cwd(), 'src/assets'),
     }
   },
   module: {

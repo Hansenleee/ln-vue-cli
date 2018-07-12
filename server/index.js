@@ -36,4 +36,9 @@ app.listen(port)
 console.log('Server is open at ' + port)
 
 // 打开浏览器
-opn('http://localhost:' + port)
+// opn('http://localhost:' + port)
+const execSync = require('child_process').execSync
+execSync('osascript open "' + 'http://localhost:' + port + '"', {
+  cwd: __dirname,
+  stdio: 'ignore',
+});
