@@ -4,6 +4,14 @@ var vueLoader = require('../vue-loader.conf')()
 var CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 var postcss = require('../../config/postcss.conf')
+var fs = require('fs')
+
+// 网站图标
+let favicon = path.join(process.cwd(), 'favicon.ico')
+
+if (!fs.existsSync(favicon)) {
+  favicon = undefined
+}
 
 module.exports = {
   // 入口配置
@@ -80,6 +88,7 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.join(process.cwd(), 'index.html'),
       filename: 'index.html',
+      favicon,
       inject: true,
     })
   ]
